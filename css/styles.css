@@ -1,0 +1,240 @@
+body{    
+    display: block;
+    flex-direction: column;
+    background: url(../img/background.png);    
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    min-height: 90vh;
+}
+
+.back{
+    display: flex;
+    align-self: flex-start;      
+}
+
+.back a{
+    display: flex;    
+    color: #00aad4;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;    
+}
+
+.back a:hover{
+    color: purple;
+    cursor: pointer;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;    
+}
+
+.main{    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    height: 450px;       
+}
+
+.top{
+    display: flex;
+    width: 100%;
+    height: 100%;    
+}
+
+.left, .right{
+    display: flex;
+    width: 40px;    
+    background: #00aad4;
+    border-radius: 0px 10px 0px 0px; /*top right bottom left */
+}
+
+.center{
+    justify-content: space-evenly;
+    display: flex;
+    width: 500px;
+    background: #0088aa;
+}
+
+.left{
+    border-radius: 10px 0px 0px 0px;
+}
+
+.up{
+    height: 20px;
+    background:#01566b;
+}
+
+.down{
+    display: flex;
+    justify-content: space-between;    
+    align-items: center;
+height: 10%;
+    background: whitesmoke;    
+    margin-top: 0.1rem;   
+}
+
+.arrow{
+    display: flex;
+    align-items: center;
+}
+
+.arrosvg{
+    z-index: 0;
+}
+
+.arrowtext{
+    z-index: 1;
+    margin-left: 1.2rem;
+    font-family: 'Roboto', sans-serif;    
+    position: absolute;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 12.5%;      
+}
+
+.column:hover
+{
+    background:lightskyblue;
+    cursor: pointer;
+}
+
+.row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+    background: white;
+    border-radius: 50%;
+}
+
+.you,.ai{
+    display: flex;    
+    align-items: center;       
+    font-family: 'Roboto', sans-serif;
+    
+}
+.circle{
+    display: flex;
+    align-items: center;
+    margin-right: 15px; 
+    margin-left: 15px;   
+    background: crimson;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.yellow{
+    background: yellow;
+    margin-left: 15px;
+}
+
+.links {
+    display: flex;
+    flex-direction: row;    
+    padding: 5px;
+}
+
+.links button {
+    margin: 5px;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.links a {
+    text-decoration: none;
+}
+
+.like {    
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
+}
+
+.like a {
+    color: white;
+}
+
+.embed {
+    border: 2px solid cornflowerblue;
+}
+
+.embed a {
+    color: black;
+}
+
+.like a:hover {
+    color: purple;
+}
+
+.embed a:hover {
+    color: purple;
+}
+
+@media(max-width: 620px){
+    .main{
+        width: 100%;
+        height: 500px;        
+    }
+    .row{        
+        height: 45px;
+        width: 45px;        
+    }    
+    .circle{    
+        background: crimson;
+        width: 40px;
+        height: 40px;        
+    }
+    .yellow{
+        background: yellow;
+    }    
+}
+@media(max-width: 485px){
+    .main{
+        width: 100%;
+        height: 500px;        
+    }
+    .row{        
+        height: 40px;
+        width: 40px;        
+    }    
+    .circle{    
+        background: crimson;
+        width: 35px;
+        height: 35px;        
+    }
+    .yellow{
+        background: yellow;
+    }    
+}
+@media(max-width: 400px){
+    .main{
+        width: 100%;
+        height: 500px;        
+    }
+    .row{        
+        height: 35px;
+        width: 35px;        
+    }    
+    .circle{    
+        background: crimson;
+        width: 30px;
+        height: 30px;        
+    }
+    .yellow{
+        background: yellow;
+    }    
+}
