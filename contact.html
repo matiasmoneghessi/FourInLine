@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Four In Line</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/contact.css">
+</head>
+<body>    
+    <div class="container">       
+        <h1 id="sended"></h1>
+        <form id="form" autocomplete="off">           
+            <div class="title">
+                <h2>Contacto</h2>
+            </div>
+            <div class="left-form">
+                <div class="items">
+                    <label for="name">Nombre</label>
+                    <input id="name" type="text" name="name">
+                    <p id="nameError" class="error"></p>
+                </div>
+                <div class="items">
+                    <label for="lastName">Apellido</label>
+                    <input id="lastName" type="text" name="lastName">
+                    <p id="lastNameError" class="error"></p>
+                </div>
+                <div class="items">
+                    <label for="email">Email</label>
+                    <input id="email" type="text" name="email">
+                    <p id="emailError" class="error"></p>
+                </div>
+                <div class="items">
+                    <label for="age">Edad</label>
+                    <input id="age" type="text" name="age">
+                    <p id="ageError" class="error"></p>
+                </div>                        
+                <div class="comments">
+                    <label for="comentts">Comentarios</label>
+                    <textarea id="comentarios" name="comentts" rows="5" cols="60"></textarea>
+                    <p id="commentsError" class="error"></p>
+                </div>
+            </div>            
+            <div class="button-form">
+                <button id="send" type="submit" onclick='return enviarFormulario();'>Enviar</button>
+                <a href="menu.html"><button id="home">Home</button></a> 
+            </div>
+        </form>
+               
+    </div>
+    
+</body>
+</html>
