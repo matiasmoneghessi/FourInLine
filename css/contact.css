@@ -110,6 +110,7 @@ button {
 
 a {
     text-decoration: none;
+    color: wheat;
 }
 
 a button {
@@ -117,7 +118,7 @@ a button {
     color: wheat;
 }
 
-button:hover {
+button:hover, a:hover  {
     cursor: pointer;
     background-color: transparent;
     color: black;
