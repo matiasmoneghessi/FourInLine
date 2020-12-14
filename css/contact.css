@@ -106,6 +106,7 @@ button {
     font-family: 'JetBrains Mono', monospace;
     font-size: 30px;
     text-align: center;
+    border: none;
 }
 
 a {

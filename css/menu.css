@@ -35,3 +35,17 @@ h1 {
     color: black;
     cursor: pointer;
 }
+
+.footer {
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+    background-color: var(--colortransparente);
+    color: black;
+}

@@ -18,7 +18,7 @@ body{
 
 .back a{
     display: flex;    
-    color: #00aad4;
+    color: black;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;    
 }
@@ -51,8 +51,8 @@ body{
 
 .left, .right{
     display: flex;
-    width: 40px;    
-    background: #00aad4;
+    width: 10px;    
+    background: royalblue;
     border-radius: 0px 10px 0px 0px; /*top right bottom left */
 }
 
@@ -60,7 +60,7 @@ body{
     justify-content: space-evenly;
     display: flex;
     width: 500px;
-    background: #0088aa;
+    background: royalblue;
 }
 
 .left{
@@ -69,15 +69,16 @@ body{
 
 .up{
     height: 20px;
-    background:#01566b;
+    background: lightskyblue;;
 }
 
 .down{
     display: flex;
     justify-content: space-between;    
     align-items: center;
-height: 10%;
-    background: whitesmoke;    
+    height: 10%;
+    background: black;
+    color: white;    
     margin-top: 0.1rem;   
 }
 
@@ -117,7 +118,7 @@ height: 10%;
     align-items: center;
     height: 50px;
     width: 50px;
-    background: white;
+    background: url(../img/background.png); 
     border-radius: 50%;
 }
 
@@ -126,7 +127,9 @@ height: 10%;
     align-items: center;       
     font-family: 'Roboto', sans-serif;
     
+    
 }
+
 .circle{
     display: flex;
     align-items: center;
@@ -141,47 +144,6 @@ height: 10%;
 .yellow{
     background: yellow;
     margin-left: 15px;
-}
-
-.links {
-    display: flex;
-    flex-direction: row;    
-    padding: 5px;
-}
-
-.links button {
-    margin: 5px;
-    border-radius: 3px;
-    text-decoration: none;
-}
-
-.links a {
-    text-decoration: none;
-}
-
-.like {    
-    background-color: cornflowerblue;
-    border-color: cornflowerblue;
-}
-
-.like a {
-    color: white;
-}
-
-.embed {
-    border: 2px solid cornflowerblue;
-}
-
-.embed a {
-    color: black;
-}
-
-.like a:hover {
-    color: purple;
-}
-
-.embed a:hover {
-    color: purple;
 }
 
 @media(max-width: 620px){
