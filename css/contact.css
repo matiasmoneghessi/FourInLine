@@ -36,18 +36,12 @@ form {
     height: 60%;
 }
 
-.left-form h2 {
-    font-weight: bold;
-    font-size: 25px;
-    margin-bottom: 25px;
-}
-
 .left-form label {
     margin: 5px;
     font-weight: bold;
 }
 
-.items,.country,.comments { 
+.items,.comments { 
     display: flex; 
     flex-direction: column;
     height: 70px;
@@ -74,8 +68,7 @@ form {
 }
 
 .comments {
-    display: flex;
-    justify-content: center;
+    display: flex;    
     align-items: center;
     width: 200px;
     height: 100px;
@@ -99,7 +92,7 @@ form {
     height: 20%;
 }
 
-button, #home a {
+button {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,8 +101,8 @@ button, #home a {
     color: wheat;
     margin: 20px;
     width: 200px;
-    height: 35px;
-    border-radius: 10px;
+    height: 50px;
+    border-radius: 40px;
     font-family: 'JetBrains Mono', monospace;
     font-size: 30px;
     text-align: center;
