@@ -41,7 +41,7 @@ form {
     font-weight: bold;
 }
 
-.items,.comments { 
+.items, .comments { 
     display: flex; 
     flex-direction: column;
     height: 70px;
@@ -50,7 +50,7 @@ form {
     margin-bottom: 30px;
 }
 
-.left-form input[type="text"] {
+.left-form input [type="text"] {
     border: none;
     margin: 4px 0 4px 0;
     height: 60px;

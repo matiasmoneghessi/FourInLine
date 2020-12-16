@@ -23,8 +23,6 @@ var isNewGame = null;
 var gameOver = false;
 var threePlayers = false;
 
-
-/* I created a multidimensional array for th board*/
 var twoPlayerBoard = [
     [null, null, null, null, null, null],
     [null, null, null, null, null, null],
@@ -35,7 +33,6 @@ var twoPlayerBoard = [
     [null, null, null, null, null, null]
 ];
 
-/*Reset function*/
 var resetGame = function () {
     boardHTML.className = '';
     if (saving) {
@@ -51,7 +48,6 @@ var resetGame = function () {
     }
 }
 
-/*Reset timmers function*/
 var resetTimers = function () {
     idFlex();
     globalTimer.resetTimer();
@@ -59,21 +55,18 @@ var resetTimers = function () {
     p2Timer.resetTimer();
 }
 
-/*Start timmers function*/
 var startTimers = function () {
     globalTimer.startTimer();
     p1Timer.startTimer();
     p2Timer.startTimer();
 }
 
-/*Stop timmers*/
 var stopTimers = function () {
     globalTimer.stopTimer();
     p1Timer.stopTimer();
     p2Timer.stopTimer();
 }
 
-/*Function for show the messegge, if you win, or if you tie*/
 var displayPopup = function (playerName) {
     finalMessage.className = ' ';
     boardHTML.className = ' disabled blur'
@@ -88,14 +81,13 @@ var displayPopup = function (playerName) {
             popupWinner.innerHTML = playerName;
             popupMessage.innerHTML = 'AND THE WINNER IS';
         } else {
-            popupWinner.innerHTML = 'No one won, Tie';
+            popupWinner.innerHTML = 'ITS A TIE!';
             postWin();
         }
     }
     stopTimers();
 }
 
-/*After the win, with this function i change the display this elements*/
 var postWin = function () {
     console.log('Tenemos un ganador')
     document.getElementById("play-area").style.display = "none";
@@ -104,10 +96,8 @@ var postWin = function () {
     document.getElementById("generalTime").style.display = "none";
     document.getElementById("save").style.display = "none";
     document.getElementById("reset").style.display = "none";
-
 }
 
-/*I change the display to flex for this elements*/
 var idFlex = function () {
     document.getElementById("play-area").style.display = "flex";
     document.getElementById("divider").style.display = "flex";
@@ -118,7 +108,6 @@ var idFlex = function () {
     document.getElementById("message").style.display = "none";
 }
 
-/*Obtein the date and format date*/
 var getDate = function () {
     var date = new Date();
     var day = date.getDate();
@@ -127,7 +116,6 @@ var getDate = function () {
     return day + '/' + month + '/' + year;
 }
 
-/*I push to localstorage the dates for currentBoard,players,date,timmers*/
 var saveGame = function () {
     savedGames.push({ currentBoard: board.board, p1: p1, p2: p2, turn: turn, date: getDate() });
     savedTimers.push({ p1: p1Timer, p2: p2Timer, globalTime: globalTimer });
@@ -138,9 +126,8 @@ var saveGame = function () {
     postWin();
 }
 
-
 var checkWin = function () {
-    //check vertical placement
+    //check vertical 
     for (var i = 0; i < board.board.length; i++) {
         for (var j = 0; j < 4; j++) {
             if (board.board[i][j]) {
@@ -156,13 +143,13 @@ var checkWin = function () {
     for (var i = 0; i < board.board.length - 3; i++) {
         for (var j = 0; j < 4; j++) {
             if (board.board[i][j]) {
-                //check horizontal placement
+                //check horizontal 
                 if (board.board[i][j] === (board.board[i + 1][j]) && board.board[i][j] === (board.board[i + 2][j]) &&
                     board.board[i][j] === (board.board[i + 3][j])) {
                     displayPopup(board.board[i][j]);
                     postWin();
                 }
-                //check diagonal increment placement
+                //check diagonal increment 
                 if (board.board[i][j] === (board.board[i + 1][j + 1]) && board.board[i][j] === (board.board[i + 2][j + 2]) &&
                     board.board[i][j] === (board.board[i + 3][j + 3])) {
                     displayPopup(board.board[i][j]);
@@ -171,7 +158,8 @@ var checkWin = function () {
             }
         }
     }
-    //check diagonal decrement placement
+
+    //check diagonal decrement 
     for (var i = 0; i < board.board.length - 3; i++) {
         for (var j = 3; j < board.board[i].length; j++) {
             if (board.board[i][j]) {
@@ -200,7 +188,6 @@ var checkDraw = function () {
     }
 }
 
-/*I save the name of the localstorage in JSON, and display en HTML the value of the two players*/
 var getPlayerNames = function () {
     if (isNewGame) {
         savedNames = JSON.parse(localStorage['playersNames']);
@@ -212,7 +199,6 @@ var getPlayerNames = function () {
     }
 }
 
-/*Depends the turn i change the name class of the turnHTML for the players can visualize if is you turn*/
 var changeTurnIcon = function () {
     if (turn === 'p1') {
         turnHTML.className = 'turn slot p1';
@@ -223,7 +209,6 @@ var changeTurnIcon = function () {
     }
 }
 
-/*I change the turn, and stop the timer for this player, and execute changeTurnIcon function*/
 var toggleTurn = function () {
     if (!gameOver) {
         turn = (turn === 'p1') ? 'p2' : 'p1';
@@ -238,7 +223,6 @@ var toggleTurn = function () {
     }
 }
 
-/*Load all dates, the timmers,board status,turn,player times,global timer, name of players*/
 var loadSavedGame = function () {
     savedGames = JSON.parse(localStorage['savedGames']);
     savedTimers = JSON.parse(localStorage['savedTimers']);
@@ -260,8 +244,6 @@ var loadSavedGame = function () {
     toggleTurn()
 }
 
-/*Initialize function, show the players names,print the board, create two players depends 
-the isNewGame value*/
 var initialize = function () {
     document.getElementById("reset").style.display = "none";
     getPlayerNames();
@@ -284,7 +266,7 @@ var initialize = function () {
     }
 }
 
-/*Obtain all elements from html to use in this game.js, and events listeners*/
+/*Obtain all elements from html to use in game.js, and events listeners*/
 window.onload = function () {
     savedGames = JSON.parse(localStorage['savedGames'] || '[]');
     savedTimers = JSON.parse(localStorage['savedTimers'] || '[]');

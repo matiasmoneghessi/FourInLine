@@ -6,9 +6,6 @@ class Timer {
         this.timer = HTMLtimer;
     }
 
-    //Gets new lastUpdateTime value, calculates the difference between lastUpdateTime & currentTime (ms)
-    //accumulates that value & then gets passed onto Date() to obtain the elapsed time & update the html timer value
-    //Updates every 1ms
     startTimer() {
         var self = this;
         if (!this.interval) {

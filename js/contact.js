@@ -91,7 +91,6 @@ var sendForm = function () {
     return false
 }
 
-
 window.onload = function () {
     userName = document.getElementById('name')
     lastName = document.getElementById('lastName')

@@ -15,8 +15,6 @@ var selectedGame = -1;
 var start = 0;
 var end = 5;
 
-//Gets clicked button and uses its index as a parameter to splice 'savedGames'
-//Updates local storage with new 'savedGames' array
 var deleteGame = function (e) {
     var btn = Array.from(btnDelete).indexOf(e.target);
     savedGames.splice(savedGames[btn], 1);
@@ -39,7 +37,6 @@ var selectGame = function (e) {
     btnLoad.className = 'btn';
 }
 
-//Changes current ul 'page' by modifying the start & end parameters of the displayed games section
 var navigation = function (e) {
     var btn = e.target.id;
     if (btn === 'next') {
@@ -54,8 +51,6 @@ var navigation = function (e) {
     loadSavedGamesData();
 }
 
-//Displays only the first 5 saved games by sectioning an array made from gameLI
-//and showing only the <li> that are a part of that section
 var loadSavedGamesData = function () {
     listSection = arrGameLI.slice(start, end);
 
