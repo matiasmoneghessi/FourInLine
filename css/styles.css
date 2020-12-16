@@ -35,168 +35,175 @@ body{
     height: 90vh;    
 }
 
-.main{    
+#game {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
-    width: 500px;
-    height: 450px;       
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
 }
 
-.top{
-    display: flex;
-    width: 100%;
-    height: 100%;    
-}
-
-.left, .right{
-    display: flex;
-    width: 10px;    
-    background: royalblue;
-    border-radius: 0px 10px 0px 0px; /*top right bottom left */
-}
-
-.center{
-    justify-content: space-evenly;
-    display: flex;
-    width: 500px;
-    background: royalblue;
-}
-
-.left{
-    border-radius: 10px 0px 0px 0px;
-}
-
-.up{
-    height: 20px;
-    background: lightskyblue;;
-}
-
-.down{
-    display: flex;
-    justify-content: space-between;    
-    align-items: center;
-    height: 10%;
-    background: black;
-    color: white;    
-    margin-top: 0.1rem;   
-}
-
-.arrow{
-    display: flex;
-    align-items: center;
-}
-
-.arrosvg{
-    z-index: 0;
-}
-
-.arrowtext{
-    z-index: 1;
-    margin-left: 1.2rem;
-    font-family: 'Roboto', sans-serif;    
-    position: absolute;
-}
-
-.column{
+#generalTime {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
     align-items: center;
-    width: 12.5%;      
+    justify-content: center;
+    padding: 0;
+    background-color: transparent;
+    line-height: 0;
+    letter-spacing: 0.3em;
+    color: black;
+    font-size: 30px;    
+    font-family: 'JetBrains Mono', monospace;
 }
 
-.column:hover
-{
-    background:lightskyblue;
+#time {
+    margin: 0;
+    padding: 1em;
+}
+
+.nameWinner {
+    font-size: 70px;
+    color: white;
+    text-align: center;
+}
+
+.msjWinner {
+    font-size: 70px;
+    color: red;
+    text-align: center;
+}
+
+.btnReset {
+    width: 300px;
+}
+
+#gameboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 20px;
+    width: 100%;
+}
+
+#play-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    flex-grow: 1;
+    padding: 0.5em 1em;
+    border-radius: 20px 20px 0 0;
+    background-color: royalblue;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-grow: 1;
+    background-color: royalblue;
+}
+
+.column:hover {
+    background-color:lightskyblue;
     cursor: pointer;
 }
 
-.row{
+.slot {
+    margin: 2px;
+    padding: 1.3em;
+    border-radius: 50%;
+    background-color: wheat;
+}
+
+.slot.p1 {
+    background-color: greenyellow;
+}
+
+.slot.p2 {
+    background-color: red;
+}
+
+
+#divider {
+    padding: 0.5em;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: lightskyblue;
+}
+
+#menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: royalblue;
+    font-size: 1.2rem;
+    color: #0F8FAF;
+}
+
+
+.player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 0 1em;
+}
+
+.player p {
+    margin: 0.2em 0;
+    padding: 0;
+    font-size: 1.5rem;
+    color: black;
+}
+
+
+.turn p {
+    margin: 0;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: white;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+}
+
+button {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50px;
-    width: 50px;
-    background: url(../img/background.png); 
-    border-radius: 50%;
+    background-color: black;
+    text-decoration: none;
+    color: brown;
+    margin: 20px;
+    width: 125px;
+    height: 35px;
+    border-radius: 10px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 30px;
+    text-align: center;
 }
 
-.you,.ai{
-    display: flex;    
-    align-items: center;       
-    font-family: 'Roboto', sans-serif;
-    
-    
+button a {
+    text-decoration: none;
+    color: white;
 }
 
-.circle{
-    display: flex;
-    align-items: center;
-    margin-right: 15px; 
-    margin-left: 15px;   
-    background: crimson;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
+button a:hover,button:hover {
+    color: white;
+    cursor: pointer;
 }
 
-.yellow{
-    background: yellow;
-    margin-left: 15px;
-}
-
-@media(max-width: 620px){
-    .main{
-        width: 100%;
-        height: 500px;        
-    }
-    .row{        
-        height: 45px;
-        width: 45px;        
-    }    
-    .circle{    
-        background: crimson;
-        width: 40px;
-        height: 40px;        
-    }
-    .yellow{
-        background: yellow;
-    }    
-}
-@media(max-width: 485px){
-    .main{
-        width: 100%;
-        height: 500px;        
-    }
-    .row{        
-        height: 40px;
-        width: 40px;        
-    }    
-    .circle{    
-        background: crimson;
-        width: 35px;
-        height: 35px;        
-    }
-    .yellow{
-        background: yellow;
-    }    
-}
-@media(max-width: 400px){
-    .main{
-        width: 100%;
-        height: 500px;        
-    }
-    .row{        
-        height: 35px;
-        width: 35px;        
-    }    
-    .circle{    
-        background: crimson;
-        width: 30px;
-        height: 30px;        
-    }
-    .yellow{
-        background: yellow;
-    }    
-}

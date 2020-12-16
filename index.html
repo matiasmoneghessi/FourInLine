@@ -9,6 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Titillium+Web&display=swap" rel="stylesheet">
     <script src="./js/app.js"></script>
     <script src="./js/timer.js"></script>
+    <script src="./js/players.js"></script>
+    <script src="./js/board.js"></script>
+    <script src="./js/game.js"></script>
+    
 </head>
 <body>
     <div class="container">
@@ -16,88 +20,37 @@
             <a href="menu.html">🢠 BACK</a>
         </div>
         <div class="wrapper">
-        <div class="main">
-            <div class="top">
-                <div class="left"></div>
-                <div class="center">
-                    <div id="column-1" class="column">
-                        <div id="row-1" class="row"></div>
-                        <div id="row-2" class="row"></div>
-                        <div id="row-3" class="row"></div>
-                        <div id="row-4" class="row"></div>
-                        <div id="row-5" class="row"></div>
-                        <div id="row-6" class="row"></div>
+            <div id="game">
+                <div id="generalTime">
+                    <p id="time">00:00</p>
+                </div>
+                <div id="gameboard">
+                    <div id="finalMessage" class="none">
+                        <p id="winner" class="nameWinner"></p>
+                        <p id="message" class="msjWinner"></p>
+                        <button id="reset" class="btnReset">Reset</button>
                     </div>
-                    <div id="column-2" class="column">
-                        <div id="row-1" class="row"></div>
-                        <div id="row-2" class="row"></div>
-                        <div id="row-3" class="row"></div>
-                        <div id="row-4" class="row"></div>
-                        <div id="row-5" class="row"></div>
-                        <div id="row-6" class="row"></div>
-                    </div>
-                    <div id="column-3" class="column">
-                        <div id="row-1" class="row"></div>
-                        <div id="row-2" class="row"></div>
-                        <div id="row-3" class="row"></div>
-                        <div id="row-4" class="row"></div>
-                        <div id="row-5" class="row"></div>
-                        <div id="row-6" class="row"></div>
-                    </div>
-                    <div id="column-4" class="column">
-                        <div id="row-1" class="row"></div>
-                        <div id="row-2" class="row"></div>
-                        <div id="row-3" class="row"></div>
-                        <div id="row-4" class="row"></div>
-                        <div id="row-5" class="row"></div>
-                        <div id="row-6" class="row"></div>
-                    </div>
-                    <div id="column-5" class="column">
-                        <div id="row-1" class="row"></div>
-                        <div id="row-2" class="row"></div>
-                        <div id="row-3" class="row"></div>
-                        <div id="row-4" class="row"></div>
-                        <div id="row-5" class="row"></div>
-                        <div id="row-6" class="row"></div>
-                    </div>
-                    <div id="column-6" class="column">
-                        <div id="row-1" class="row"></div>
-                        <div id="row-2" class="row"></div>
-                        <div id="row-3" class="row"></div>
-                        <div id="row-4" class="row"></div>
-                        <div id="row-5" class="row"></div>
-                        <div id="row-6" class="row"></div>
-                    </div>
-                    <div id="column-7" class="column">
-                        <div id="row-1" class="row"></div>
-                        <div id="row-2" class="row"></div>
-                        <div id="row-3" class="row"></div>
-                        <div id="row-4" class="row"></div>
-                        <div id="row-5" class="row"></div>
-                        <div id="row-6" class="row"></div>
+                    <div id="play-area"></div>
+                    <div id="divider"></div>
+                    <div id="menu">
+                        <div class="player">
+                            <p id="p1-name">Name (P1)</p>
+                            <p id="p1-time">00:00</p>
+                        </div>
+                        <div id="turn" class="turn slot">
+                            <p id="turn-text">P1</p>
+                        </div>
+                        <div class="player">
+                            <p id="p2-name">Name (P2)</p>
+                            <p id="p2-time">00:00</p>
+                        </div>
                     </div>
                 </div>
-                <div class="right"></div>
+                <button id="save">Save</button>
+                <button><a class="icon" href="menu.html">Home</a></button>
             </div>
-            <div class="up"></div>
-            <div class="down">
-                <div class="you">
-                    <div class="circle"></div>
-                    <p style="color: white;">You</p>
-                </div>
-                <div class="arrow">
-                    <a class="arrowtext">GO!</a>
-                    <img id="arrowsvg" src="turn-arrow-1.svg">
-                </div>
-
-                <div class="ai">
-                    <p style="color: white;">AI</p>
-                    <div class="circle yellow"></div>
-                </div>
-
-            </div>
+            
         </div>
-    </div>
     </div>
 </body>
 </html>
