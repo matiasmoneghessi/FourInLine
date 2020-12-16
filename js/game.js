@@ -84,9 +84,9 @@ var displayPopup = function (playerName) {
     } else {
         gameOver = true;
         if (playerName) {
-            playerName = (playerName === 'p1') ? p1.name : p2.name;
+            playerName = (playerName === 'p1') ? p1.name : p2.name;            
             popupWinner.innerHTML = playerName;
-            popupMessage.innerHTML = 'Is the Winner!!!!!';
+            popupMessage.innerHTML = 'AND THE WINNER IS';
         } else {
             popupWinner.innerHTML = 'No one won, Tie';
             postWin();
@@ -204,11 +204,11 @@ var checkDraw = function () {
 var getPlayerNames = function () {
     if (isNewGame) {
         savedNames = JSON.parse(localStorage['playersNames']);
-        p1Name.innerHTML = savedNames[0].namep1 + ' (P1)';
-        p2Name.innerHTML = savedNames[0].namep2 + ' (P2)';
+        p1Name.innerHTML = savedNames[0].namep1 + ': P1';
+        p2Name.innerHTML = savedNames[0].namep2 + ': P2';
     } else {
-        p1Name.innerHTML = savedGames[savedGameIndex].p1.name + ' (P1)';
-        p2Name.innerHTML = savedGames[savedGameIndex].p2.name + ' (P2)';
+        p1Name.innerHTML = savedGames[savedGameIndex].p1.name + ': P1';
+        p2Name.innerHTML = savedGames[savedGameIndex].p2.name + ': P2';
     }
 }
 
@@ -257,6 +257,7 @@ var loadSavedGame = function () {
     p1Timer.startTimer();
     p2Timer.startTimer();
     setTimeout(toggleTurn, 1);
+    toggleTurn()
 }
 
 /*Initialize function, show the players names,print the board, create two players depends 

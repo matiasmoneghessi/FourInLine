@@ -29,7 +29,7 @@ var deleteGame = function (e) {
 var loadGame = function () {
     var newGame = false;
     localStorage['newGame'] = JSON.stringify(newGame);
-    location.href = 'game.html';
+    location.href = 'index.html';
 }
 
 var selectGame = function (e) {
@@ -62,10 +62,6 @@ var loadSavedGamesData = function () {
     for (var i = 0; i < savedGames.length; i++) {
         p1HTML[i].innerHTML = savedGames[i].p1.name;
         p2HTML[i].innerHTML = savedGames[i].p2.name;
-        if (savedGames[i].p3 != null) {
-            p3HTML[i].className = 'game-info p3';
-            p3HTML[i].innerHTML = savedGames[i].p3.name;
-        }
         dateHTML[i].innerHTML = savedGames[i].date;
     }
 
@@ -93,8 +89,6 @@ var renderList = function () {
         html += '<div class="game-info p1"></div>';
         html += '<p>VS</p>';
         html += '<div class="game-info p2"></div>';
-        if (storedGames[i].p3) { html += '<p>VS</p>'; }
-        html += '<div class="game-info p3 hidden"></div>';
         html += '</div>';
         html += '<p class="date"></p><span class="delete">Delete</span>';
         html += '</li>';
@@ -112,7 +106,6 @@ window.onload = function () {
     gameLI = document.getElementsByClassName('game');
     p1HTML = document.getElementsByClassName('game-info p1');
     p2HTML = document.getElementsByClassName('game-info p2');
-    p3HTML = document.getElementsByClassName('game-info p3');
     dateHTML = document.getElementsByClassName('date');
     empty = document.getElementById('empty');
     btnBack = document.getElementById('back');
