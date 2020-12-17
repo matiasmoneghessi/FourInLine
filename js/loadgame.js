@@ -37,42 +37,13 @@ var selectGame = function (e) {
     btnLoad.className = 'btn';
 }
 
-var navigation = function (e) {
-    var btn = e.target.id;
-    if (btn === 'next') {
-        start += 5;
-        end += 5;
-    } else {
-        if (start >= 5) {
-            start -= 5;
-            end -= 5;
-        }
-    }
-    loadSavedGamesData();
-}
-
 var loadSavedGamesData = function () {
     listSection = arrGameLI.slice(start, end);
-
     for (var i = 0; i < savedGames.length; i++) {
         p1HTML[i].innerHTML = savedGames[i].p1.name;
         p2HTML[i].innerHTML = savedGames[i].p2.name;
         dateHTML[i].innerHTML = savedGames[i].date;
     }
-
-    for (var l = 0; l < savedGames.length; l++) {
-        gameLI[l].className = 'game hidden';
-    }
-
-    for (var j = 0; j < listSection.length; j++) {
-        listSection[j].className = ' game';
-    }
-}
-
-var showEmptyList = function () {
-    empty.className = ' ';
-    btnBack.className += ' disabled';
-    btnNext.className += ' disabled';
 }
 
 var renderList = function () {
@@ -111,6 +82,7 @@ window.onload = function () {
     (savedGames.length > 0) ? renderList() : showEmptyList();
     Array.from(btnDelete).forEach(elem => elem.addEventListener('click', deleteGame));
     savedGameIndex = selectedGame;
+    //change the object into a string
     localStorage['gameIndex'] = JSON.stringify(savedGameIndex);
     arrGameLI.forEach(elem => elem.addEventListener('click', selectGame));
 }

@@ -21,7 +21,6 @@ var savedNames = [];
 var saving = false;
 var isNewGame = null;
 var gameOver = false;
-var threePlayers = false;
 
 var twoPlayerBoard = [
     [null, null, null, null, null, null],
@@ -68,8 +67,6 @@ var stopTimers = function () {
 }
 
 var displayPopup = function (playerName) {
-    finalMessage.className = ' ';
-    boardHTML.className = ' disabled blur'
     if (saving) {
         popupWinner.innerHTML = '';
         popupMessage.innerHTML = 'Game saved!';
@@ -116,6 +113,7 @@ var getDate = function () {
     return day + '/' + month + '/' + year;
 }
 
+// this function saves in two arrays the  info of the game and times. 
 var saveGame = function () {
     savedGames.push({ currentBoard: board.board, p1: p1, p2: p2, turn: turn, date: getDate() });
     savedTimers.push({ p1: p1Timer, p2: p2Timer, globalTime: globalTimer });
@@ -223,6 +221,7 @@ var toggleTurn = function () {
     }
 }
 
+// save the string of the array of the localstorage in an json
 var loadSavedGame = function () {
     savedGames = JSON.parse(localStorage['savedGames']);
     savedTimers = JSON.parse(localStorage['savedTimers']);

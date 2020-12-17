@@ -26,7 +26,7 @@ var validateInput = function () {
     }
     return isValid;
 }
-
+/* In this function the array is pushed with the names of the players, and create the local storage json with this array */
 var savePlayerNames = function () {
     playerNames.push({ namep1: p1Name.value, namep2: p2Name.value });
     localStorage['playersNames'] = JSON.stringify(playerNames);
